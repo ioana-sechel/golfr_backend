@@ -18,7 +18,7 @@ class ApplicationController < ActionController::API
     if user.blank?
       render json: {
         errors: 'The user was not found'
-      }, status: :bad_request
+      }, status: :not_found
       return
     end
 
