@@ -15,6 +15,16 @@ module Api
       render json: response.to_json
     end
 
+    def user_score
+      user = find_user(params[:id])
+
+      if user
+        render json: {
+          scores: user.scores
+        }
+      end
+    end
+
     def create
       score = current_user.scores.build(score_params)
 
