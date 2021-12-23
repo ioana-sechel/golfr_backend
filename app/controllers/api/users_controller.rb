@@ -28,7 +28,7 @@ module Api
       }.to_json
     end
 
-    def user_show
+    def show
       user = find_user(params[:id])
 
       return unless user
