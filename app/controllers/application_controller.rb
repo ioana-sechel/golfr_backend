@@ -17,12 +17,12 @@ class ApplicationController < ActionController::API
 
     if user.blank?
       render json: {
-        errors: "The user was not found"
+        errors: 'The user was not found'
       }, status: :bad_request
       return
     end
 
-    return user
+    user
   end
 
   def current_token

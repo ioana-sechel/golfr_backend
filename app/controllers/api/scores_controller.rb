@@ -15,14 +15,14 @@ module Api
       render json: response.to_json
     end
 
-    def user_score
+    def user_scores
       user = find_user(params[:id])
 
-      if user
-        render json: {
-          scores: user.scores
-        }
-      end
+      return unless user
+
+      render json: {
+        scores: user.scores
+      }
     end
 
     def create

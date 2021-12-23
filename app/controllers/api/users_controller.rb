@@ -31,12 +31,12 @@ module Api
     def user_name
       user = find_user(params[:id])
 
-      if user
-        render json: {
-          id: user.id,
-          name: user.name
-        }
-      end
+      return unless user
+
+      render json: {
+        id: user.id,
+        name: user.name
+      }
     end
   end
 end
